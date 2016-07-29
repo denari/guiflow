@@ -61,8 +61,13 @@ var refresh = function(data) {
     var initialViewBox;
     var onDrag = false;
 
-    svg.find("g.node polygon").attr("fill", "white");
-    svg.find("g.node ellipse").attr("fill", "white");
+    svg.find("g.node polygon").attr("fill", "#333");
+    svg.find("g polygon").attr("fill", "#333");
+    svg.find("g.node ellipse").attr("fill", "#333");
+    svg.find("g.node polygon").attr("stroke", "#ccc");
+    svg.find("g.node polyline").attr("stroke", "#ccc");
+    svg.find("g.node ellipse").attr("stroke", "#ccc");
+    svg.find("text").attr("fill", "#ccc");
     svg.find("g.node").on("mouseover", function(e) {
         $(this).find("polygon").attr("stroke", "green");
         $(this).find("polygon").attr("stroke-width", "4");
@@ -80,9 +85,9 @@ var refresh = function(data) {
         }
     });
     svg.find("g.node").on("mouseout", function(e) {
-        $(this).find("polygon").attr("stroke", "black");
+        $(this).find("polygon").attr("stroke", "#ccc");
         $(this).find("polygon").attr("stroke-width", "1");
-        $(this).find("ellipse").attr("stroke", "black");
+        $(this).find("ellipse").attr("stroke", "#ccc");
         $(this).find("ellipse").attr("stroke-width", "1");
     });
     svg.on("mousedown", function(evt) {
