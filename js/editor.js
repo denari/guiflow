@@ -36,6 +36,8 @@ $(window).on("load", function() {
         }
     }, 500);
 
+    editor.setKeyboardHandler('ace/keyboard/vim');
+
 });
 
 var waitEditorReady = flumine(function(d, ok, ng) {
